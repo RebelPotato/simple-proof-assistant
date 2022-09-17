@@ -1,0 +1,151 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Jacking in...
+; Starting Jack-in Terminal: bb --nrepl-server 14601
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> (let [coll #(1 2 3)]
+             (map vector coll coll))
+; : Don't know how to create ISeq from: sci.impl.fns$fun$arity_0__3486 user 
+clj꞉user꞉> #(1 2 3)
+#object[sci.impl.fns$fun$arity_0__3486 0x198ad0b7 "sci.impl.fns$fun$arity_0__3486@198ad0b7"]
+clj꞉user꞉> #{1 2 3}
+#{1 3 2}
+clj꞉user꞉> (let [coll #{1 2 3}]
+             (map vector coll coll))
+([1 1] [3 3] [2 2])
+clj꞉user꞉> (seq {1 2,2 3,3 1})
+([1 2] [2 3] [3 1])
+clj꞉user꞉> (def test-truth #{[:atom :->] [:axiom [:foo]] [:axiom [:bar]]
+                             [:theorem [:baz]]})
+#<Var@66e73a31: #{[:theorem [:baz]] [:axiom [:foo]] [:axiom [:bar]] [:atom :->]}>
+clj꞉user꞉> test-truth
+#{[:theorem [:baz]] [:axiom [:foo]] [:axiom [:bar]] [:atom :->]}
+clj꞉user꞉> (contains? test-truth :axiom)
+false
+clj꞉user꞉> (filter #(= (first %) :axiom) test-truth)
+([:axiom [:foo]] [:axiom [:bar]])
+clj꞉user꞉> (and () :nope)
+:nope
+clj꞉user꞉> 
+#<Var@74d3f640: #object[sci.impl.fns$fun$arity_2__3498 0xc6f5992 "sci.impl.fns$fun$arity_2__3498@c6f5992"]>
+clj꞉user꞉> (filter-truth-of-type test-truth :atom
+                                 )
+#{:atom}
+clj꞉user꞉> 
+#<Var@74d3f640: #object[sci.impl.fns$fun$arity_2__3498 0x1502298e "sci.impl.fns$fun$arity_2__3498@1502298e"]>
+clj꞉user꞉> (filter-truth-of-type test-truth :atom)
+#{:->}
+clj꞉user꞉> (filter-truth-of-type test-truth :axiom)
+#{[:foo] [:bar]}
+clj꞉user꞉> :/\\
+\\
+clj꞉user꞉> \
+; clojure.lang.ExceptionInfo: [line 1, col 2] Unexpected EOF while reading character. user d:\My_stuff\My_Projects\æ•°ç�†é€»è¾‘\Tinylog\clojureå®žçŽ°\.calva\output-window\output.calva-repl:1:
+clj꞉user꞉> :/\
+; clojure.lang.ExceptionInfo: [line 1, col 4] Unexpected EOF while reading character. user d:\My_stuff\My_Projects\æ•°ç�†é€»è¾‘\Tinylog\clojureå®žçŽ°\.calva\output-window\output.calva-repl:1:
+clj꞉user꞉> :/\\
+\\
+clj꞉user꞉> 
+#<Var@5f4a616d: #object[sci.impl.fns$fun$arity_1__3491 0x6d827fdb "sci.impl.fns$fun$arity_1__3491@6d827fdb"]>
+clj꞉user꞉> 
+[[:â†’ :ç”² :ç”²]]
+clj꞉user꞉> :甲
+:ç”²
+clj꞉user꞉> ::甲
+:user/ç”²
+clj꞉user꞉> 
+[[:â†’ :phi :phi]]
+clj꞉user꞉> 
+[[:implies :phi :phi]]
+clj꞉user꞉> "/\\"
+"/\\"
+clj꞉user꞉> (print "/\\")
+/\
+nil
+clj꞉user꞉> (print ":甲")
+:ç”²
+nil
+clj꞉user꞉> (def test 1)
+#<Var@6c1a8342: 1>
+clj꞉user꞉> 
+(def test 2
+  )
+#<Var@6c1a8342: 2>
+clj꞉user꞉> 
+[[:implies :phi :phi]]
+clj꞉user꞉> 
+#<Var@58655c12: {:type :binary, :content :implies, :print-symbol "->"}>
+clj꞉user꞉> symbols
+{:type :binary, :content :implies, :print-symbol "->"}
+clj꞉user꞉> 
+#<Var@58655c12: 
+  #{{:type :wff, :content :phi}
+    {:type :wff, :content :psi}
+    {:type :setvar, :content :c}
+    {:type :setvar, :content :y}
+    {:type :binary, :content :and, :print-symbol "/\\"}
+    {:type :setvar, :content :x}
+    {:type :unitary, :content :not, :print-symbol "-."}
+    {:type :setvar, :content :a}
+    {:type :setvar, :content :b}
+    {:type :wff, :content :chi}
+    {:type :wff, :content :theta}
+    {:type :setvar, :content :z}
+    {:type :binary, :content :implies, :print-symbol "->"}}>
+clj꞉user꞉> 
+#<Var@46aa7630: #object[sci.impl.fns$fun$arity_1__3491 0x25d944a "sci.impl.fns$fun$arity_1__3491@25d944a"]>
+clj꞉user꞉> (form-symbol? :c)
+(:setvar)
+clj꞉user꞉> (form-symbol? :d)
+()
+clj꞉user꞉> 
+#<Var@46aa7630: #object[sci.impl.fns$fun$arity_1__3491 0x428412a1 "sci.impl.fns$fun$arity_1__3491@428412a1"]>
+clj꞉user꞉> (form-symbol? :chi
+                         )
+:wff
+clj꞉user꞉> (-> 2 (- 1))
+1
+clj꞉user꞉> (->> 2 (- 1))
+-1
+clj꞉user꞉> 
+#<Var@386bc758: #object[sci.impl.fns$fun$arity_1__3491 0x3eb84a50 "sci.impl.fns$fun$arity_1__3491@3eb84a50"]>
+clj꞉user꞉> (find-sentence :ax-1)
+nil
+clj꞉user꞉> (= ({:type :axiom
+                :content [:implies :phi [:implies :psi :phi]]
+                :use-name :ax-1
+                :name ["simp"]}
+               :use-name) :ax-1)
+true
+clj꞉user꞉> 
+#<Var@386bc758: #object[sci.impl.fns$fun$arity_1__3491 0x19ef4a10 "sci.impl.fns$fun$arity_1__3491@19ef4a10"]>
+clj꞉user꞉> (find-sentence :ax-1)
+({:type :axiom, :content [:implies :phi [:implies :psi :phi]], :use-name :ax-1, :name ["simp"]})
+clj꞉user꞉> 
+#<Var@386bc758: #object[sci.impl.fns$fun$arity_1__3491 0x60c194db "sci.impl.fns$fun$arity_1__3491@60c194db"]>
+clj꞉user꞉> (find-sentence :ax-1)
+{:type :axiom, :content [:implies :phi [:implies :psi :phi]], :use-name :ax-1, :name ["simp"]}
+clj꞉user꞉> 
+; : Parameter declaration should be a vector user d:\My_stuff\My_Projects\æ•°ç�†é€»è¾‘\Tinylog\clojureå®žçŽ°\.calva\output-window\main.clj:97:7
+clj꞉user꞉> (find-sentence :ax-1)
+{:type :axiom, :content [:implies :phi [:implies :psi :phi]], :use-name :ax-1, :name ["simp"]}
+clj꞉user꞉> 
+#<Var@386bc758: #object[sci.impl.fns$fun$arity_1__3491 0x12fd7d48 "sci.impl.fns$fun$arity_1__3491@12fd7d48"]>
+clj꞉user꞉> (find-sentence :ax-1)
+[:implies :phi [:implies :psi :phi]]
+clj꞉user꞉> 
